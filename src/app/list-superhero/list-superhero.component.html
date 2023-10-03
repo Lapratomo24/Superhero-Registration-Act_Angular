@@ -1,1 +1,26 @@
-<p>list-superhero works!</p>
+<main>
+    <h3 class="p-10">List of registered superheroes</h3>
+
+    <table class="border-collapse border border-slate-500 border-spacing-2">
+        <thead class="bg-red-500">
+            <tr>
+                <th class="p-4 border border-slate-600">Superhero</th>
+                <th class="p-4 border border-slate-600">First Name</th>
+                <th class="p-4 border border-slate-600">Last Name</th>
+                <th class="p-4 border border-slate-600">Base of Operation</th>
+                <th class="p-4 border border-slate-600">Affiliation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let superhero of superheroes" class="text-center">
+                <td class="border border-slate-700">{{ superhero.heroName }}</td>
+                <td class="border border-slate-700">{{ superhero.firstName }}</td>
+                <td class="border border-slate-700">{{ superhero.lastName }}</td>
+                <td class="border border-slate-700">{{ superhero.baseOfOperation }}</td>
+                <td class="p-2 border border-slate-700">{{ superhero.affiliation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</main>
