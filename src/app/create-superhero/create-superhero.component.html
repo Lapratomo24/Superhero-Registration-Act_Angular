@@ -1,1 +1,36 @@
-<p>create-superhero works!</p>
+<h3>Register a new superhero</h3>
+<form (ngSubmit)="onSubmit()">
+    <div class="mb-6">
+        <label for="heroName" class="block mb-2 text-sm font-medium text-gray-900">Superhero Name</label>
+        <input type="text" id="heroName" [(ngModel)]="superhero.heroName" name="heroName"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-screen p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="eg. Batman" required>
+    </div>
+    <div class="mb-6">
+        <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900 ">First Name</label>
+        <input type="text" id="firstName" [(ngModel)]="superhero.firstName" name="firstName"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-screen p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="eg. Bruce" required>
+    </div>
+    <div class="mb-6">
+        <label for="lastName" class="block mb-2 text-sm font-medium text-gray-900 ">Last Name</label>
+        <input type="text" id="lastName" [(ngModel)]="superhero.lastName" name="lastName"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="eg. Wayne" required>
+    </div>
+    <div class="mb-6">
+        <label for="baseOfOperation" class="block mb-2 text-sm font-medium text-gray-900 ">Base of Operation</label>
+        <input type="text" id="baseOfOperation" [(ngModel)]="superhero.baseOfOperation" name="baseOfOperation"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="eg. Gotham City" required>
+    </div>
+    <div class="mb-6">
+        <label for="affiliation" class="block mb-2 text-sm font-medium text-gray-900 ">Affiliation</label>
+        <input type="text" id="affiliation" [(ngModel)]="superhero.affiliation" name="affiliation"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="eg. Justice League" required>
+    </div>
+    
+    <button type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</form>

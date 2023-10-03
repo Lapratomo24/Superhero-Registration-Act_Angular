@@ -7,6 +7,7 @@ import { UpdateSuperheroComponent } from './update-superhero/update-superhero.co
 import { ListSuperheroComponent } from './list-superhero/list-superhero.component';
 import { DetailedSuperheroComponent } from './detailed-superhero/detailed-superhero.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
