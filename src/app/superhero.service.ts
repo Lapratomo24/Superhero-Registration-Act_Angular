@@ -20,4 +20,8 @@ export class SuperheroService {
   public addSuperhero(superhero: Superhero): Observable<Object> {
     return this.http.post(`${this.apiServerUrl}/superhero/add`, superhero);
   }
+
+  public getSuperheroById(id: number): Observable<Superhero> {
+    return this.http.get<Superhero>(`${this.apiServerUrl}/${id}`)
+  }
 }

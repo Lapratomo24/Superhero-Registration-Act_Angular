@@ -9,6 +9,7 @@
                 <th class="p-4 border border-slate-600">Last Name</th>
                 <th class="p-4 border border-slate-600">Base of Operation</th>
                 <th class="p-4 border border-slate-600">Affiliation</th>
+                <th class="p-4 border border-red-500">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,9 @@
                 <td class="border border-slate-700">{{ superhero.lastName }}</td>
                 <td class="border border-slate-700">{{ superhero.baseOfOperation }}</td>
                 <td class="p-2 border border-slate-700">{{ superhero.affiliation }}</td>
+                <td>
+                    <button (click)="updateSuperhero(superhero.id)">Update</button>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { SuperheroService } from './../superhero.service';
 import { Superhero } from './../superhero';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ export class ListSuperheroComponent implements OnInit {
 
   public superheroes: Superhero[];
 
-  constructor(private superheroService: SuperheroService) { }
+  constructor(private superheroService: SuperheroService, private router: Router) { }
 
   // ngOnInit(): void {
   //   this.superheroes= [{
@@ -33,6 +34,10 @@ export class ListSuperheroComponent implements OnInit {
       console.log(response)
       this.superheroes = response;
     })
+  }
+
+  public updateSuperhero(id: number) {
+    this.router.navigate(['update-superhero', id])
   }
 
 }
