@@ -1,7 +1,7 @@
 import { Superhero } from './../superhero';
 import { Component, OnInit } from '@angular/core';
 import { SuperheroService } from '../superhero.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-superhero',
@@ -11,15 +11,29 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateSuperheroComponent implements OnInit {
 
   id: number;
-  superhero: Superhero = new Superhero()
+  public superhero: Superhero = new Superhero();
 
-  constructor(private superheroService: SuperheroService, private route: ActivatedRoute) {}
+  constructor(private superheroService: SuperheroService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id']
-      this.superheroService.getSuperheroById(this.id).subscribe(response => {
-        this.superhero = response;
-      }, error => console.log(error));
+    this.id = this.route.snapshot.params['id'];
+    this.superheroService.getSuperheroById(this.id).subscribe(response => {
+      this.superhero = response;
+    }, error => console.log(error));
   }
 
+  updateSuperhero() {
+    this.superheroService.updateSuperhero(this.id, this.superhero).subscribe(response => {
+      this.superhero = new Superhero();
+      this.goToSuperheroList();
+    }, error => console.log(error));
+  }
+
+  goToSuperheroList() {
+    this.router.navigate(['/superheroes']);
+  }
+  
+  onSubmit() {
+    this.updateSuperhero();
+  }
 }

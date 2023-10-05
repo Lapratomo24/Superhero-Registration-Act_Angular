@@ -25,11 +25,11 @@ export class CreateSuperheroComponent implements OnInit {
   }
 
   goToList() {
-    this.router.navigate(['/superheroes'])
+    this.router.navigate(['/superheroes']);
   }
 
   onSubmit() {
-    this.addSuperhero()
+    this.addSuperhero();
   }
 
 }

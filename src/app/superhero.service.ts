@@ -22,6 +22,15 @@ export class SuperheroService {
   }
 
   public getSuperheroById(id: number): Observable<Superhero> {
-    return this.http.get<Superhero>(`${this.apiServerUrl}/${id}`)
+    return this.http.get<Superhero>(`${this.apiServerUrl}/superhero/${id}`);
+  }  
+
+  public updateSuperhero(id: number, superhero: Superhero): Observable<Object> {
+    return this.http.put(`${this.apiServerUrl}/superhero/${id}`, superhero);
   }
+
+  public removeSuperhero(id: number): Observable<Object> {
+    return this.http.delete(`${this.apiServerUrl}/superhero/${id}`);
+  }
+
 }

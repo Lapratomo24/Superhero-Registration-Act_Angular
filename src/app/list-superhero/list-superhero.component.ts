@@ -40,5 +40,11 @@ export class ListSuperheroComponent implements OnInit {
     this.router.navigate(['update-superhero', id])
   }
 
+  public removeSuperhero(id: number) {
+    this.superheroService.removeSuperhero(id).subscribe(response => {
+      this.getSuperheroes();
+    })
+  }
+
 }
 
